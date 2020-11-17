@@ -22,7 +22,7 @@ public enum BaseballGameConfig {
         return start;
     }
 
-    public int getNextInt() {
+    public int getBound() {
         return end - start + 1;
     }
 

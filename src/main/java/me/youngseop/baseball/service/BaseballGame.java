@@ -28,8 +28,8 @@ public class BaseballGame {
     private void play() {
         do {
             BaseballNumber baseBallNumber = input.getBaseBallNumber();
-            gameResult.makeAnswer(computer.getComputerNumber(), baseBallNumber);
-            gameResult.answer();
+            gameResult.scoring(computer.getComputerNumber(), baseBallNumber);
+            gameResult.printAnswer();
         } while (gameResult.isNotCollect());
     }
 

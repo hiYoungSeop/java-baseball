@@ -18,20 +18,7 @@ public class GameResult {
         resetBallType();
     }
 
-    public void answer() {
-        int size = config.getSize();
-        if (strike == size) {
-            log(format("%d개의 숫자를 모두 맞히셨습니다! 게임종료", size));
-            return;
-        }
-        if (out == size) {
-            log(format("%d 아웃", size));
-            return;
-        }
-        log(makeMessage());
-    }
-
-    public void makeAnswer(BaseballNumber computer, BaseballNumber input) {
+    public void scoring(BaseballNumber computer, BaseballNumber input) {
         int idx = 0;
         Set<Integer> inputNumbers = input.getNumbers();
         resetBallType();
@@ -40,6 +27,10 @@ public class GameResult {
             addBallType(strikeBall);
             idx++;
         }
+    }
+
+    public void printAnswer() {
+        System.out.println(getAnswer());
     }
 
     public boolean isNotCollect() {
@@ -62,17 +53,20 @@ public class GameResult {
         }
     }
 
-    private String makeMessage() {
+    private String getAnswer() {
+        int size = config.getSize();
+        if (strike == size) {
+            return format("%d개의 숫자를 모두 맞히셨습니다! 게임종료", size);
+        }
+        if (out == size) {
+            return format("%d 아웃", size);
+        }
         String result = "";
         if (strike > 0)
             result += format("%d 스트라이크", strike);
         if (ball > 0)
             result += format(" %d 볼", ball);
         return result.trim();
-    }
-
-    private void log(String string) {
-        System.out.println(string);
     }
 
 }

@@ -28,7 +28,7 @@ public class BaseballComputer {
     }
 
     private int getRandomNumber() {
-        return random.nextInt(config.getNextInt()) + config.getStart();
+        return random.nextInt(config.getBound()) + config.getStart();
     }
 
     public BaseballNumber getComputerNumber() {
