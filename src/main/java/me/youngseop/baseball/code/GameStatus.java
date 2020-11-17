@@ -13,12 +13,12 @@ public enum GameStatus {
         return UNKNOWN;
     }
 
-    public boolean isValidInput() {
-        boolean valid = this != UNKNOWN;
-        if(!valid) {
+    public boolean isInValidInput() {
+        boolean inValid = this == UNKNOWN;
+        if(inValid) {
             System.out.println("잘못 입력 하셨습니다. 다시 입력해 주세요");
         }
-        return valid;
+        return inValid;
     }
 
     public boolean isContinue() {

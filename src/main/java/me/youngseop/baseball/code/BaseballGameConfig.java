@@ -1,7 +1,8 @@
 package me.youngseop.baseball.code;
 
 public enum BaseballGameConfig {
-    NUMBER3(3, 100, 999);
+    THREE_DIGITS(3, 123, 987),
+    FOUR_DIGITS(4, 1234, 9876);
 
     private final int size;
     private final int start;
@@ -19,10 +20,6 @@ public enum BaseballGameConfig {
 
     public int getStart() {
         return start;
-    }
-
-    public int getEnd() {
-        return end;
     }
 
     public int getNextInt() {

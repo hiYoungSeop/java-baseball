@@ -7,8 +7,7 @@ import java.util.Set;
 public enum BallType {
     STRIKE, BALL, OUT;
 
-    public static BallType getStrikeBall(BaseballNumber input, int idx, Integer checkNumber) {
-        Set<Integer> numbers = input.getNumbers();
+    public static BallType getStrikeBall(Set<Integer> numbers, int idx, Integer checkNumber) {
         int checkIdx = 0;
         for (Integer number : numbers) {
             if (number.equals(checkNumber))
